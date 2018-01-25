@@ -105,7 +105,9 @@ export function focusSearchInputWorkaround() {
 }
 
 function updatePlaceholderTextWithShortcutHint() {
+  // <LOCALE
   const hintText = shortcut => `(${shortcut} opens this)`;
+  // LOCALE>
   return getOsShortcut()
     .then(hintText)
     .then(appendSearchInputPlaceholderText);

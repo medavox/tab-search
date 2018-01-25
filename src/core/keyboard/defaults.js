@@ -1,6 +1,6 @@
 import * as c from './constants';
 import { kbdCommand } from './constructor';
-
+// <LOCALE
 export const defaultCommands = {
   [c.TAB_OPEN]: {
     key: c.TAB_OPEN,
@@ -64,3 +64,4 @@ export const defaultCommands = {
   },
   // [c.TAB_MOVE]: kbdCommand('')
 };
+// LOCALE>

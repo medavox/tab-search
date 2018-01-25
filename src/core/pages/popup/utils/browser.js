@@ -9,6 +9,8 @@ import {
 } from './dom';
 import { decodeUrl } from './url';
 
+export const { i18n } = browser;
+
 export function addTabsToPromiseChain(store) {
   const { getState } = store;
   const { searchAllWindows } = getState().general;
