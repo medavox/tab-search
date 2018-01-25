@@ -1,0 +1,31 @@
+# manifest.json
+extensionName:
+  message: TabSearch
+  description: Name of the extension.
+extensionDescription:
+  message: Keyboard-accessible tab management.
+  description: Description of the extension.
+
+# Keyboard strings
+ERR_NOT_VALID_SINGLE_KEY:
+  message: Not a valid single key.
+  description: Tells the user that the key they pressed is not allowed to be a shortcut by itself (e.g. <D> can't be a shortcut because it's needed to search for things in the search input-box, <Ctrl+D> is allowed).
+ERR_NOT_VALID_FINAL_KEY:
+  message: Not a valid final key.
+  description: Tells the user that the key pressed cannot be the basis for this combination of shortcuts (e.g. <Ctrl+Alt+Delete> can't be a shortcut because it's an important system shortcut for most OS configurations, so <Delete> is not a valid final key for this specific combination of keypresses).
+HINT_SHOULD_USE_MODIFIERS:
+  message: Try adding a modifier key ($OS_CTRL$, Alt, Shift) to your shortcut combination.
+  description: Tells the user that that the user is not valid
+  placeholders:
+    os_ctrl: "$1",
+    example: "Cmd"
+    description: "On Macs this will be interpreted as Cmd. On Window/Linux as Ctrl."
+HINT_VALID_SINGLE_KEYS:
+  message: Letters and numbers [A-Za-z0-9] aren't allowed on their own as a shortcut.
+  description: Tell the user that this set of keys are not allowed to be shortcuts on their own.
+HINT_TRY_PUNCTUATION:
+  message: Punctuation keys [- = [ ] \ ; ' , . /] tend to work well as shortcuts.
+  description: Tell user that these keys are appropriate shortcuts.
+HINT_NEED_FINAL_KEY:
+  message: Finish your shortcut by pressing a non-modifier (NOT Ctrl/Cmd, Alt, or Shift) key.
+
