@@ -1,3 +1,9 @@
 {
-  "minimum_chrome_version": "59.0.3071"
+  "minimum_chrome_version": "59.0.3071",
+  "background": {
+    "scripts": [
+      "lib/browser-polyfill.min.js",
+      "background_bundle.js"
+    ]
+  }
 }
