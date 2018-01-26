@@ -70,6 +70,24 @@ const webpackConfig = {
         loader: 'css-object-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.yaml$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].json',
+              context: 'src',
+            },
+          },
+          {
+            loader: 'yaml-import-loader',
+            options: {
+              output: 'json',
+            },
+          },
+        ],
+      },
     ],
   },
   entry: {
