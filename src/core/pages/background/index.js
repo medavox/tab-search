@@ -1,3 +1,5 @@
+// This is the entry point for the localized yaml files
+import '_locales/en/messages.yaml';
 import backgroundStore from './store';
 import {
   startCountingBadgeTextAndAddListeners,
