@@ -9,13 +9,16 @@
   <link href="settings.css" rel="stylesheet">
 </head>
 <body>
-  <!-- <LOCALE -->
+    <script>
+      // Locale for title
+      document.title = browser.i18n.getMessage('EXTNAME_SETTINGS');
+    </script>
     <header class="section-header">
-      <h1>TabSearch Settings</h1>
+      <h1 data-message="EXTNAME_SETTINGS">TabSearch Settings</h1>
       <p class="subheader ralign">
-        Current version: <span id="versioning"></span>
+        <span data-message="CURRENT_VERSION">Current version</span>: <span id="versioning"></span>
         <br>
-        <a href="https://github.com/reblws/tab-search/issues">Found a bug?</a> / <a href="https://github.com/reblws/tab-search/blob/master/CHANGELOG.md">Changelog</a> / <a href="https://github.com/reblws/tab-search/">Source</a>
+        <a href="https://github.com/reblws/tab-search/issues" data-message="ASK_FOR_BUGS">Found a bug?</a> / <a href="https://github.com/reblws/tab-search/blob/master/CHANGELOG.md" data-message="Changelog">Changelog</a> / <a href="https://github.com/reblws/tab-search/" data-message="SOURCE">Source</a>
       </p>
     </header>
     <p class="subheader hint">
@@ -25,120 +28,121 @@
       <div>
         <fieldset>
           <header>
-            <h2>Appearance</h2>
-            <button class="browser-style">Reset to Defaults</button>
+            <h2 data-message="SECTION_APPEARANCE">Appearance</h2>
+            <button data-message="DEFAULT_RESET" class="browser-style">Reset to Defaults</button>
           </header>
           <p class="inputs browser-style">
             <input type="checkbox" name="showVisualDeleteTabButton" id="showVisualDeleteTabButton">
-            <label for="showVisualDeleteTabButton">Show visual delete tab button</label>
+            <label data-message="SHOW_VISUAL_DELETE_BUTTON" for="showVisualDeleteTabButton">Show visual delete tab button</label>
           </p>
           <p class="inputs browser-style">
             <input type="checkbox" name="useFallbackFont" id="useFallbackFont">
-            <label for="useFallbackFont">Use browser's default font (sans-serif)</label>
+            <label data-message="USE_FALLBACK_FONT" for="useFallbackFont">Use browser's default font (sans-serif)</label>
           </p>
 
           <p class="inputs browser-style">
             <input type="checkbox" name="showTabCountBadgeText" id="showTabCountBadgeText">
-            <label for="showTabCountBadgeText">Display total number of tabs above the popup icon</label>
+            <label data-message="SHOW_TAB_COUNT_BADGE_TEXT" for="showTabCountBadgeText">Display total number of tabs above the popup icon</label>
           </p>
           <p class="inputs browser-style">
             <input type="number" min="8" max="32" id="tabTitleSize" name="tabTitleSize"> &ensp;
-            <label for="tabTitleSize">px Tab title font size</label>
+            <label data-message="TAB_TITLE_SIZE" for="tabTitleSize">px Tab title font size</label>
           </p>
           <p class="inputs browser-style">
             <input type="number" min="0" max="32" id="tabUrlSize" name="tabUrlSize"> &ensp;
-            <label for="tabUrlSize">px Tab url font size</label>
+            <label data-message="TAB_URL_SIZE" for="tabUrlSize">px Tab url font size</label>
           </p>
           <p class="inputs browser-style">
             <input type="checkbox" name="oneLineTabTitles" id="oneLineTabTitles">
-            <label for="oneLineTabTitles">One line tab titles</label>
+            <label for="oneLineTabTitles" data-message="ONE_LINE_TAB_TITLES">One line tab titles</label>
           </p>
         </fieldset>
         <fieldset>
           <header>
-            <h2>Colors</h2>
-            <button class="browser-style">Reset to Defaults</button>
+            <h2 data-message="SECTION_COLORS">Colors</h2>
+            <button data-message="DEFAULT_RESET" class="browser-style">Reset to Defaults</button>
           </header>
           <p class="inputs browser-style">
             <input name="tabColor" id="tabColor" type="color">
-            <label for="tabColor">Tab Color</label>
+            <label for="tabColor" data-message="COLOR" data-placeholders="TAB">Tab Color</label>
           </p>
           <p class="inputs browser-style">
             <input name="otherWindowTabColor" id="otherWindowTabColor" type="color">
-            <label for="otherWindowTabColor">Other Window Tab Color</label>
+            <label for="otherWindowTabColor" data-message="COLOR" data-placeholders="OTHER_WINDOW_TAB">Other Window Tab Color</label>
           </p>
           <p class="inputs browser-style">
             <input name="recentlyClosedTabColor" id="recentlyClosedTabColor" type="color">
-            <label for="recentlyClosedTabColor">Recently Closed Tab Color</label>
+            <label for="recentlyClosedTabColor" data-message="COLOR" data-placeholders="RECENTLY_CLOSED_TAB">Recently Closed Tab Color</label>
           </p>
           <p class="inputs browser-style">
             <input name="bookmarkColor" id="bookmarkColor" type="color">
-            <label for="bookmarkColor">Bookmark Color</label>
+            <label for="bookmarkColor" data-message="COLOR" data-placeholders="BOOKMARK">Bookmark Color</label>
           </p>
           <p class="inputs browser-style">
             <input name="historyColor" id="historyColor" type="color">
-            <label for="historyColor">History Color</label>
+            <label for="historyColor" data-message="COLOR" data-placeholders="HISTORY">History Color</label>
           </p>
         </fieldset>
       </div>
 
       <fieldset>
         <header>
-          <h2>Results</h2>
-          <button class="browser-style">Reset to Defaults</button>
+          <h2 data-message="SECTION_RESULTS">Results</h2>
+          <button data-message="DEFAULT_RESET" class="browser-style">Reset to Defaults</button>
         </header>
         <p class="inputs">
           <input type="checkbox" name="searchAllWindows" id="searchAllWindows">
-          <label for="searchAllWindows">Show tabs from all windows</label>
+          <label for="searchAllWindows" data-message="SEARCH_ALL_WINDOWS">Show tabs from all windows</label>
         </p>
         <p class="inputs">
           <input type="checkbox" name="showBookmarks" id="showBookmarks">
-          <label for="showBookmarks">Show Bookmarks in search results</label>
+          <label for="showBookmarks" data-message="SHOW_XS_IN_SEARCH_RESULTS" data-placeholders="BOOKMARK_PL">Show Bookmarks in search results</label>
         </p>
         <p class="inputs">
           <input type="checkbox" name="showHistory" id="showHistory">
-          <label for="showHistory">Show History in search results</label>
+          <label for="showHistory" data-message="SHOW_XS_IN_SEARCH_RESULTS" data-placeholders="HISTORY">Show History in search results</label>
         </p>
         <div>
           <p class="inputs">
             <input type="checkbox" name="showRecentlyClosed" id="showRecentlyClosed">
-            <label for="showRecentlyClosed">Show Recently Closed Tabs</label>
+            <label for="showRecentlyClosed" data-message="SHOW_XS_FROM_ALL_WINDOWS" data-placeholders="RECENTLY_CLOSED_TAB_PL">Show Recently Closed Tabs</label>
           </p>
           <p class="inputs">
-            <label for="recentlyClosedLimit">Recently closed tabs limit (max. 25): &nbsp;</label>
+            <label for="recentlyClosedLimit" data-message="RECENTLY_CLOSED_LIMIT">Recently closed tabs limit (max. 25): &nbsp;</label>
             <input class="number-input" type="number" name="recentlyClosedLimit" id="recentlyClosedLimit" min="0" max="25">
           </p>
         </div>
         </p>
         <p class="inputs">
           <input type="checkbox" name="alwaysShowRecentlyClosedAtTheBottom" id="alwaysShowRecentlyClosedAtTheBottom">
-          <label for="alwaysShowRecentlyClosedAtTheBottom">
+          <label for="alwaysShowRecentlyClosedAtTheBottom" data-message="ALWAYS_SHOW_XS_AT_BOTTOM"
+          data-placeholders="RECENTLY_CLOSED_TAB_PL">
             Always show Recently Closed Tabs at the bottom of the search list
           </label>
         </p>
         <p class="inputs">
           <input type="checkbox" name="showLastQueryOnPopup" id="showLastQueryOnPopup">
-          <label for="showLastQueryOnPopup">
+          <label for="showLastQueryOnPopup" data-message="SHOW_LAST_QUERY_ON_POPUP">
             Show the last query's results when opening the popup window
           </label>
         </p>
         <p class="inputs">
           <input type="checkbox" name="shouldSortByMostRecentlyUsedOnPopup" id="shouldSortByMostRecentlyUsedOnPopup">
-          <label for="shouldSortByMostRecentlyUsedOnPopup">
+          <label for="shouldSortByMostRecentlyUsedOnPopup" data-message="SORT_MRU_ON_POPUP">
            Sort tabs by most recently used on when search is empty and on popup
           </label>
         </p>
         <p class="inputs browser-style">
 <input type="checkbox" name="shouldSortByMostRecentlyUsedAll" id="shouldSortByMostRecentlyUsedAll">
-<label for="shouldSortByMostRecentlyUsedAll">
+<label for="shouldSortByMostRecentlyUsedAll" data-message="ALWAYS_SORT_MRU">
             <em>Always</em> sort tabs by most recently used
           </label>
         </p>
       </fieldset>
       <fieldset>
         <header>
-          <h2>Behavior</h2>
-          <button class="browser-style">Reset to Defaults</button>
+          <h2 data-message="SECTION_BEHAVIOR">Behavior</h2>
+          <button data-message="DEFAULT_RESET" class="browser-style">Reset to Defaults</button>
         </header>
         <p class="inputs browser-style">
           <input type="checkbox" name="showUrls" id="showUrls">
@@ -171,11 +175,11 @@
     </form>
     <div id="shortcuts" class="shortcuts">
       <header>
-        <h2>Keyboard Shortcuts</h2>
-        <button class="browser-style" id="shortcut-reset">Reset to Defaults</button>
+        <h2 data-message="SECTION_KBD_SHORTCUTS">Keyboard Shortcuts</h2>
+        <button class="browser-style" data-message="DEFAULT_RESET" id="shortcut-reset">Reset to Defaults</button>
       </header>
       <p>Here is a list of shortcuts you can customize. Click the input in the left and press your desired key-combination.</p>
-      <p><strong>If your shortcut overlaps with a browser or system shortcut it will not work.</strong></p>
+      <p>If your shortcut overlaps with a browser or system shortcut <strong>it will not work.</strong></p>
       <div id="shortcut-flash" class="shortcut-flash">
       </div>
       <table id="shortcut-table" class="shortcut-table">

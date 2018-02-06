@@ -1,31 +1,181 @@
-# manifest.json
+# -> messages.json
 extensionName:
   message: TabSearch
   description: Name of the extension.
+
 extensionDescription:
   message: Keyboard-accessible tab management.
   description: Description of the extension.
+
+EXTNAME_SETTINGS:
+  message: Tabsearch Settings
+  description: Title of the settings page
+
+# Setting strings
+DEFAULT_RESET:
+  message: Reset to Defaults
+  description: Resets the current section of settings to the extension's defaults.
+
+
+SECTION_APPEARANCE:
+  message: Appearance
+  description: A header title indicating that these settings affect the extension's visual looks.
+
+SHOW_VISUAL_DELETE_BUTTON:
+  message: Show visual delete tab button
+  description: Enabling this setting makes it possible to close tabs with your mouse only by adding an icon.
+
+USE_FALLBACK_FONT:
+  message: Use browser's default font (sans-serif)
+  description: Enabling this switches the fonts loaded to use
+
+SHOW_TAB_COUNT_BADGE_TEXT:
+  message: Display total number of tabs above the popup icon
+  description: Indicates that this enables the badge above the popup icon counting the number of tabs
+
+TAB_TITLE_SIZE:
+  message: px Tab title font isze
+  description: Changes the title of each tab in the popup, sized by pixels.
+
+TAB_URL_SIZE:
+  message: px Tab url font size
+  description: Changes the size of the urls by pixels in the tab list of the popup.
+
+ONE_LINE_TAB_TITLES:
+  message: One line tab titles
+  description: Ticking this makes it so tab titles only occupy one line
+
+SECTION_COLORS:
+  message: Colors
+  description: A header title indicating that these settings affect the colors the extension uses.
+
+# Note we don't need to word it by color since the color input should be enough to tell
+# that this changes the color
+COLOR:
+  message: $TYPE$ Color
+  description: Noun for color.
+  placeholders:
+    type:
+      content: $1
+      example: Other window tab color
+
+TAB:
+  message: Tab
+  description: A regular tab open in current browser window.
+
+TAB_PL:
+  message: Tabs
+  description: Plural form of tabs.
+
+OTHER_WINDOW_TAB:
+  message: Other window tab
+  description: A tab open in another window.
+
+OTHER_WINDOW_TAB_PL:
+  message: Other window tabs
+  description: Plural of OTHER_WINDOW_TAB
+
+RECENTLY_CLOSED_TAB:
+  message: Recently closed tab
+  description: A tab that was recently closed.
+
+RECENTLY_CLOSED_TAB_PL:
+  message: Recently closed tabs
+  description: Plural of RECENTLY_CLOSED_TAB
+
+BOOKMARK:
+  message: Bookmark
+
+BOOKMARK_PL:
+  message: Bookmarks
+  description: Plural form of bookmarks
+
+HISTORY:
+  message: History
+  description: A tab from the itmes history
+
+# Results
+SECTION_RESULTS:
+  message: Results
+  description: A header title indicating that these settings affect what results appear after searching in the popup.
+
+SEARCH_ALL_WINDOWS:
+  message: Include tabs from all windows
+  description: The extension will show tabs from all windows if this is enabled.
+
+SHOW_XS_IN_SEARCH_RESULTS:
+  message: Include $TYPE_PL$ in search results
+  description: Show the given type in the extension search results.
+  placeholders:
+    type_pl:
+      content: $1
+      example: Show Bookmarks in search results
+
+RECENTLY_CLOSED_LIMIT:
+  message: Recently closed tabs limit
+  description: Limits the number of recently closed tabs to display
+
+
+ALWAYS_SHOW_XS_AT_BOTTOM:
+  message: Always show $TYPE_PL$ at the bottom of the search results
+  placeholder:
+    type_pl:
+      content: $1
+      example: Always show recently closed tabs
+      description: Plural form of type
+
+SHOW_LAST_QUERY_ON_POPUP:
+  message: Show the last query's results when opening the popup window.
+  description: Enabling this shows the results of the last search they made before opening their current session
+
+SORT_MRU_ON_POPUP:
+  message: Sort tabs by most recently used on when search on initial popup
+  description: Sort the search results by when they were last accessed the first time they open the popup
+
+ALWAYS_SORT_MRU:
+  message: Always sort by most recently used
+
+# Behavior
+SECTION_BEHAVIOR:
+  message: Behavior
+  description: A header title indicating these settings affect the internal rules for how the search works.
+
+SHOW_URLS:
+  message: Search by url
+
+
+# Shortcuts
+SECTION_KBD_SHORTCUTS:
+  message: Keyboard Shortcuts
+  description: A header title indicating that these settings allow you to configure custom keyboard shortcuts for extension commands.
+
+
 
 # Keyboard strings
 ERR_NOT_VALID_SINGLE_KEY:
   message: Not a valid single key.
   description: Tells the user that the key they pressed is not allowed to be a shortcut by itself (e.g. <D> can't be a shortcut because it's needed to search for things in the search input-box, <Ctrl+D> is allowed).
+
 ERR_NOT_VALID_FINAL_KEY:
   message: Not a valid final key.
   description: Tells the user that the key pressed cannot be the basis for this combination of shortcuts (e.g. <Ctrl+Alt+Delete> can't be a shortcut because it's an important system shortcut for most OS configurations, so <Delete> is not a valid final key for this specific combination of keypresses).
+
 HINT_SHOULD_USE_MODIFIERS:
   message: Try adding a modifier key ($OS_CTRL$, Alt, Shift) to your shortcut combination.
   description: Tells the user that that the user is not valid
   placeholders:
-    os_ctrl: "$1",
-    example: "Cmd"
-    description: "On Macs this will be interpreted as Cmd. On Window/Linux as Ctrl."
+    os_ctrl: $1
+    example: Cmd
+    description: On Macs this will be interpreted as Cmd. On Window/Linux as Ctrl.
+
 HINT_VALID_SINGLE_KEYS:
   message: Letters and numbers [A-Za-z0-9] aren't allowed on their own as a shortcut.
   description: Tell the user that this set of keys are not allowed to be shortcuts on their own.
+
 HINT_TRY_PUNCTUATION:
   message: Punctuation keys [- = [ ] \ ; ' , . /] tend to work well as shortcuts.
   description: Tell user that these keys are appropriate shortcuts.
+
 HINT_NEED_FINAL_KEY:
   message: Finish your shortcut by pressing a non-modifier (NOT Ctrl/Cmd, Alt, or Shift) key.
 
